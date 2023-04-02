@@ -7,7 +7,7 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 const Contact = () => {
-	console.log(import.meta.env.PROD.VITE_SERVICE);
+	console.log(import.meta.env.VITE_SERVICE);
 	console.log(import.meta.env.VITE_SERVICE);
 	const [load, setLoad] = useState(false);
 	useEffect(() => {
@@ -26,8 +26,8 @@ const Contact = () => {
 		setLoading(true);
 		emailjs
 			.send(
-				import.meta.env.PROD.VITE_SERVICE,
-				import.meta.env.PROD.VITE_TEMPLATE,
+				import.meta.env.VITE_SERVICE,
+				import.meta.env.VITE_TEMPLATE,
 				{
 					from_name: form.name,
 					to_name: "Alexey",
@@ -35,7 +35,7 @@ const Contact = () => {
 					to_email: "avxmvd@gmail.com",
 					message: `${form.message} От ${form.email}`,
 				},
-				import.meta.env.PROD.VITE_PUBLIC
+				import.meta.env.VITE_PUBLIC
 			)
 			.then(
 				() => {
