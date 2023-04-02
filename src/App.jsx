@@ -11,8 +11,13 @@ import {
 	Works,
 	StarsCanvas,
 } from "./components";
+import { useEffect, useState } from 'react';
 
 const App = () => {
+	const [load, setLoad] = useState(false);
+	useEffect(() => {
+		setLoad(true);
+	}, 4000);
 	return (
 		<BrowserRouter>
 			<div className="relative z-0 bg-primary">
@@ -28,7 +33,7 @@ const App = () => {
 
 				{/* <Feedbacks/> */}
 				<div className="relative z-0">
-					<StarsCanvas />
+					{load?<StarsCanvas />:''}
 					<Contact />
 				</div>
 			</div>
