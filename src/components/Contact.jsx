@@ -7,6 +7,8 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 const Contact = () => {
+	console.log(import.meta.env.PROD.VITE_SERVICE);
+	console.log(import.meta.env.VITE_SERVICE);
 	const [load, setLoad] = useState(false);
 	useEffect(() => {
 		setLoad(true);
